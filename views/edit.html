@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ... (Head section) ... -->
+  <title>Edit Data</title>
+  <link rel="stylesheet" href="/styles.css"> <!-- Tautkan file CSS -->
+</head>
+<body>
+  <h1>Edit Data</h1>
+
+  <!-- Display form for editing data -->
+  <form id="editForm">
+    <!-- ... (form elements) ... -->
+
+    <label for="editNISN">NISN:</label>
+    <input type="text" id="editNISN" value="${data.NISN}" readonly>
+
+    <label for="editName">Name:</label>
+    <input type="text" id="editName" value="${data.Nama}">
+
+    <!-- Dynamically generate input fields based on data -->
+    <!-- ... (form elements) ... -->
+
+    <button type="button" onclick="updateData()">Update Data</button>
+  </form>
+
+  <!-- Script JavaScript -->
+  <script type="text/javascript">
+    async function updateData() {
+      const editNISN = document.getElementById('editNISN').value;
+      const editName = document.getElementById('editName').value;
+
+      const updatedData = { NISN: editNISN, Name: editName };
+
+      // Dynamically retrieve values for all variables
+      <!-- Replace the following block with JavaScript logic to retrieve values for dynamically generated input fields -->
+      /*
+      const editVariable1 = document.getElementById('editVariable1').value;
+      updatedData['Variable1'] = editVariable1;
+
+      const editVariable2 = document.getElementById('editVariable2').value;
+      updatedData['Variable2'] = editVariable2;
+      */
+
+      try {
+        const response = await fetch(`http://localhost:3000/updateData/${encodeURIComponent(editNISN)}`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(updatedData),
+        });
+
+        const result = await response.json();
+
+        if (response.ok) {
+          alert(result.message);
+        } else {
+          alert('Error updating data');
+        }
+      } catch (error) {
+        console.error('Error updating data:', error);
+        alert('Internal Server Error');
+      }
+    }
+  </script>
+</body>
+</html>

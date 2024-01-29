@@ -1,0 +1,311 @@
+<!-- views/edit.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ... (Head section) ... -->
+  <title>Edit Data</title>
+  <link rel="stylesheet" href="/styles.css"> <!-- Tautkan file CSS -->
+</head>
+<body>
+  <h1>Edit Data</h1>
+  <div> <b>null</b> artinya kosong, hanya diganti apabila ada data yang benar </div>
+
+  <!-- Display form for editing data -->
+  <form id="editForm">
+    <label for="editNISN">NISN:</label>
+    <input type="text" id="editNISN" value="<%= data.NISN %>" readonly>
+    
+    <label for="editNama">Nama:</label>
+    <input type="text" id="editNama" value="<%= data.Nama %>">
+
+    <label for="editNIPD">NIPD (Nomor Induk):</label>
+    <input type="text" id="editNIPD" value="<%= data.NIPD %>">
+
+    <label for="editJK">JK:</label>
+    <input type="text" id="editJK" value="<%= data.JK %>">
+
+    <label for="editTempat_Lahir">Tempat_Lahir:</label>
+    <input type="text" id="editTempat_Lahir" value="<%= data.Tempat_Lahir %>">
+
+    <label for="editTanggal_Lahir">Tanggal_Lahir:</label>
+    <input type="text" id="editTanggal_Lahir" value="<%= data.Tanggal_Lahir %>">
+
+    <label for="editNIK">NIK:</label>
+    <input type="text" id="editNIK" value="<%= data.NIK %>">
+
+    <label for="editAgama">Agama:</label>
+    <input type="text" id="editAgama" value="<%= data.Agama %>">
+
+    <label for="editAlamat">Alamat:</label>
+    <input type="text" id="editAlamat" value="<%= data.Alamat %>">
+
+    <label for="editRT">RT:</label>
+    <input type="text" id="editRT" value="<%= data.RT %>">
+
+    <label for="editRW">RW:</label>
+    <input type="text" id="editRW" value="<%= data.RW %>">
+
+    <label for="editDusun">Dusun:</label>
+    <input type="text" id="editDusun" value="<%= data.Dusun %>">
+
+    <label for="editKelurahan">Kelurahan:</label>
+    <input type="text" id="editKelurahan" value="<%= data.Kelurahan %>">
+
+    <label for="editKecamatan">Kecamatan:</label>
+    <input type="text" id="editKecamatan" value="<%= data.Kecamatan %>">
+
+    <label for="editKode_Pos">Kode_Pos:</label>
+    <input type="text" id="editKode_Pos" value="<%= data.Kode_Pos %>">
+
+    <label for="editJenis_Tinggal">Jenis_Tinggal:</label>
+    <input type="text" id="editJenis_Tinggal" value="<%= data.Jenis_Tinggal %>">
+
+    <label for="editAlat_Transportasi">Alat_Transportasi:</label>
+    <input type="text" id="editAlat_Transportasi" value="<%= data.Alat_Transportasi %>">
+
+    <label for="editHP">HP:</label>
+    <input type="text" id="editHP" value="<%= data.HP %>">
+
+    <label for="editEmail">E-Mail:</label>
+    <input type="text" id="editEmail" value="<%= data.Email %>">
+
+    <label for="editSKHUN">SKHUN (tidak usah di isi):</label>
+    <input type="text" id="editSKHUN" value="<%= data.SKHUN %>" readonly>
+
+    <label for="editPenerima_KPS">Penerima_KPS (diisi jika memiliki):</label>
+    <input type="text" id="editPenerima_KPS" value="<%= data.Penerima_KPS %>">
+
+    <label for="editNo_KPS">No_KPS (jangan di edit jika tidak menerima:</label>
+    <input type="text" id="editNo_KPS" value="<%= data.No_KPS %>">
+
+    <label for="editnama_ayah">nama_ayah:</label>
+    <input type="text" id="editnama_ayah" value="<%= data.nama_ayah %>">
+
+    <label for="editTahun_Lahir_a">Tahun_Lahir Ayah:</label>
+    <input type="text" id="editTahun_Lahir_a" value="<%= data.Tahun_Lahir_a %>">
+
+    <label for="editJenjang_Pendidikan_a">Jenjang_Pendidikan Ayah:</label>
+    <input type="text" id="editJenjang_Pendidikan_a" value="<%= data.Jenjang_Pendidikan_a %>">
+
+    <label for="editPekerjaan_a">Pekerjaan_a:</label>
+    <input type="text" id="editPekerjaan_a" value="<%= data.Pekerjaan_a %>">
+
+    <label for="editPenghasilan_a">Penghasilan_a:</label>
+    <input type="text" id="editPenghasilan_a" value="<%= data.Penghasilan_a %>">
+
+    <label for="editNIK_a">NIK_a:</label>
+    <input type="text" id="editNIK_a" value="<%= data.NIK_a %>">
+
+    <label for="editNama_i">Nama_ibu:</label>
+    <input type="text" id="editNama_i" value="<%= data.Nama_i %>">
+
+    <label for="editTahun_Lahir_i">Tahun_Lahir_ibu:</label>
+    <input type="text" id="editTahun_Lahir_i" value="<%= data.Tahun_Lahir_i %>">
+
+    <label for="editJenjang_Pendidikan_i">Jenjang_Pendidikan_ibu:</label>
+    <input type="text" id="editJenjang_Pendidikan_i" value="<%= data.Jenjang_Pendidikan_i %>">
+
+    <label for="editPekerjaan_i">Pekerjaan_ibu:</label>
+    <input type="text" id="editPekerjaan_i" value="<%= data.Pekerjaan_i %>">
+
+    <label for="editPenghasilan_i">Penghasilan_i:</label>
+    <input type="text" id="editPenghasilan_i" value="<%= data.Penghasilan_i %>">
+
+    <label for="editNIK_i">NIK_i:</label>
+    <input type="text" id="editNIK_i" value="<%= data.NIK_i %>">
+
+    <label for="editNama_w">Nama_Wali (Jika memiliki Wali):</label>
+    <input type="text" id="editNama_w" value="<%= data.Nama_w %>">
+
+    <label for="editTahun_Lahir_w">Tahun_Lahir_w:</label>
+    <input type="text" id="editTahun_Lahir_w" value="<%= data.Tahun_Lahir_w %>">
+
+    <label for="editJenjang_Pendidikan_w">Jenjang_Pendidikan_w:</label>
+    <input type="text" id="editJenjang_Pendidikan_w" value="<%= data.Jenjang_Pendidikan_w %>">
+
+    <label for="editPekerjaan_w">Pekerjaan_w:</label>
+    <input type="text" id="editPekerjaan_w" value="<%= data.Pekerjaan_w %>">
+
+    <label for="editPenghasilan_w">Penghasilan_w:</label>
+    <input type="text" id="editPenghasilan_w" value="<%= data.Penghasilan_w %>">
+
+    <label for="editNIK_w">NIK_w:</label>
+    <input type="text" id="editNIK_w" value="<%= data.NIK_w %>">
+
+    <label for="editRombel">Rombel:</label>
+    <input type="text" id="editRombel" value="<%= data.Rombel %>">
+
+    <label for="editNo_Peserta_Ujian_Nasional">No_Peserta_Ujian_Nasional (tidak usah di isi):</label>
+    <input type="text" id="editNo_Peserta_Ujian_Nasional" value="<%= data.No_Peserta_Ujian_Nasional %>" readonly>
+
+    <label for="editNo_Seri_Ijazah">No_Seri_Ijazah:</label>
+    <input type="text" id="editNo_Seri_Ijazah" value="<%= data.No_Seri_Ijazah %>">
+
+    <label for="editPenerima_KIP">Penerima_KIP:</label>
+    <input type="text" id="editPenerima_KIP" value="<%= data.Penerima_KIP %>">
+
+    <label for="editNomor_KIP">Nomor_KIP:</label>
+    <input type="text" id="editNomor_KIP" value="<%= data.Nomor_KIP %>">
+
+    <label for="editNama_di_KIP">Nama_di_KIP:</label>
+    <input type="text" id="editNama_di_KIP" value="<%= data.Nama_di_KIP %>">
+
+    <label for="editNomor_KKS">Nomor_KKS:</label>
+    <input type="text" id="editNomor_KKS" value="<%= data.Nomor_KKS %>">
+
+    <label for="editNo_Registrasi_Akta_Lahir">No_Registrasi_Akta_Lahir:</label>
+    <input type="text" id="editNo_Registrasi_Akta_Lahir" value="<%= data.No_Registrasi_Akta_Lahir %>">
+
+    <label for="editBank">Bank (jangan di edit):</label>
+    <input type="text" id="editBank" value="<%= data.Bank %>" readonly>
+
+    <label for="editNomor_Rekening_Bank">Nomor_Rekening_Bank (jangan di edit):</label>
+    <input type="text" id="editNomor_Rekening_Bank" value="<%= data.Nomor_Rekening_Bank %>" readonly>
+
+    <label for="editRekening_Atas_Nama">Rekening_Atas_Nama (jangan di edit):</label>
+    <input type="text" id="editRekening_Atas_Nama" value="<%= data.Rekening_Atas_Nama %>" readonly>
+
+    <label for="editLayak_PIP">Layak_PIP:</label>
+    <input type="text" id="editLayak_PIP" value="<%= data.Layak_PIP %>">
+
+    <label for="editAlasan_Layak_PIP">Alasan_Layak_PIP:</label>
+    <input type="text" id="editAlasan_Layak_PIP" value="<%= data.Alasan_Layak_PIP %>">
+
+    <label for="editKebutuhan_Khusus">Kebutuhan_Khusus:</label>
+    <input type="text" id="editKebutuhan_Khusus" value="<%= data.Kebutuhan_Khusus %>">
+
+    <label for="editSekolah_Asal">Sekolah_Asal:</label>
+    <input type="text" id="editSekolah_Asal" value="<%= data.Sekolah_Asal %>">
+
+    <label for="editAnak_ke_berapa">Anak_ke_berapa:</label>
+    <input type="text" id="editAnak_ke_berapa" value="<%= data.Anak_ke_berapa %>">
+
+    <label for="editLintang">Lintang (google map):</label>
+    <input type="text" id="editLintang" value="<%= data.Lintang %>">
+
+    <label for="editBujur">Bujur  (google map):</label>
+    <input type="text" id="editBujur" value="<%= data.Bujur %>">
+
+    <label for="editNo_KK">No_KK:</label>
+    <input type="text" id="editNo_KK" value="<%= data.No_KK %>">
+
+    <label for="editBerat_Badan">Berat_Badan (Kg):</label>
+    <input type="text" id="editBerat_Badan" value="<%= data.Berat_Badan %>">
+
+    <label for="editTinggi_Badan">Tinggi_Badan (cm):</label>
+    <input type="text" id="editTinggi_Badan" value="<%= data.Tinggi_Badan %>">
+
+    <label for="editLingkar_Kepala">Lingkar_Kepala (cm):</label>
+    <input type="text" id="editLingkar_Kepala" value="<%= data.Lingkar_Kepala %>">
+
+    <label for="editJml_Saudara_Kandung">Jml_Saudara_Kandung:</label>
+    <input type="text" id="editJml_Saudara_Kandung" value="<%= data.Jml_Saudara_Kandung %>">
+
+    <label for="editJarak_Rumah_ke_Sekolah">Jarak_Rumah_ke_Sekolah (km):</label>
+    <input type="text" id="editJarak_Rumah_ke_Sekolah" value="<%= data.Jarak_Rumah_ke_Sekolah %>">
+    
+    <!-- Add other fields as needed -->
+
+    <button type="button" onclick="updateData()">Update Data</button>
+    <!-- Bagian-bagian HTML lainnya di halaman edit -->
+
+    <a href="/">Kembali ke Halaman Utama</a>
+
+    <!-- Bagian-bagian HTML lainnya di halaman edit -->
+    </form>
+
+  <!-- Script JavaScript -->
+  <script>
+    // Function to update data
+    async function updateData() {
+      const editNISN = document.getElementById('editNISN').value;
+      const editNama = document.getElementById('editNama').value;
+      const editNIPD = document.getElementById('editNIPD').value;
+      const editJK = document.getElementById('editJK').value;
+      const editTempat_Lahir = document.getElementById('editTempat_Lahir').value;
+      const editTanggal_Lahir = document.getElementById('editTanggal_Lahir').value;
+      const editNIK = document.getElementById('editNIK').value;
+      const editAgama = document.getElementById('editAgama').value;
+      const editAlamat = document.getElementById('editAlamat').value;
+      const editRT = document.getElementById('editRT').value;
+      const editRW = document.getElementById('editRW').value;
+      const editDusun = document.getElementById('editDusun').value;
+      const editKelurahan = document.getElementById('editKelurahan').value;
+      const editKecamatan = document.getElementById('editKecamatan').value;
+      const editKode_Pos = document.getElementById('editKode_Pos').value;
+      const editJenis_Tinggal = document.getElementById('editJenis_Tinggal').value;
+      const editAlat_Transportasi = document.getElementById('editAlat_Transportasi').value;
+      const editHP = document.getElementById('editHP').value;
+      const editEmail = document.getElementById('editEmail').value;
+      const editSKHUN = document.getElementById('editSKHUN').value;
+      const editPenerima_KPS = document.getElementById('editPenerima_KPS').value;
+      const editNo_KPS = document.getElementById('editNo_KPS').value;
+      const editnama_ayah = document.getElementById('editnama_ayah').value;
+      const editTahun_Lahir_a = document.getElementById('editTahun_Lahir_a').value;
+      const editJenjang_Pendidikan_a = document.getElementById('editJenjang_Pendidikan_a').value;
+      const editPekerjaan_a = document.getElementById('editPekerjaan_a').value;
+      const editPenghasilan_a = document.getElementById('editPenghasilan_a').value;
+      const editNIK_a = document.getElementById('editNIK_a').value;
+      const editNama_i = document.getElementById('editNama_i').value;
+      const editTahun_Lahir_i = document.getElementById('editTahun_Lahir_i').value;
+      const editJenjang_Pendidikan_i = document.getElementById('editJenjang_Pendidikan_i').value;
+      const editPekerjaan_i = document.getElementById('editPekerjaan_i').value;
+      const editPenghasilan_i = document.getElementById('editPenghasilan_i').value;
+      const editNIK_i = document.getElementById('editNIK_i').value;
+      const editNama_w = document.getElementById('editNama_w').value;
+      const editTahun_Lahir_w = document.getElementById('editTahun_Lahir_w').value;
+      const editJenjang_Pendidikan_w = document.getElementById('editJenjang_Pendidikan_w').value;
+      const editPekerjaan_w = document.getElementById('editPekerjaan_w').value;
+      const editPenghasilan_w = document.getElementById('editPenghasilan_w').value;
+      const editNIK_w = document.getElementById('editNIK_w').value;
+      const editRombel = document.getElementById('editRombel').value;
+      const editNo_Peserta_Ujian_Nasional = document.getElementById('editNo_Peserta_Ujian_Nasional').value;
+      const editNo_Seri_Ijazah = document.getElementById('editNo_Seri_Ijazah').value;
+      const editPenerima_KIP = document.getElementById('editPenerima_KIP').value;
+      const editNomor_KIP = document.getElementById('editNomor_KIP').value;
+      const editNama_di_KIP = document.getElementById('editNama_di_KIP').value;
+      const editNomor_KKS = document.getElementById('editNomor_KKS').value;
+      const editNo_Registrasi_Akta_Lahir = document.getElementById('editNo_Registrasi_Akta_Lahir').value;
+      const editBank = document.getElementById('editBank').value;
+      const editNomor_Rekening_Bank = document.getElementById('editNomor_Rekening_Bank').value;
+      const editRekening_Atas_Nama = document.getElementById('editRekening_Atas_Nama').value;
+      const editLayak_PIP = document.getElementById('editLayak_PIP').value;
+      const editAlasan_Layak_PIP = document.getElementById('editAlasan_Layak_PIP').value;
+      const editKebutuhan_Khusus = document.getElementById('editKebutuhan_Khusus').value;
+      const editSekolah_Asal = document.getElementById('editSekolah_Asal').value;
+      const editAnak_ke_berapa = document.getElementById('editAnak_ke_berapa').value;
+      const editLintang = document.getElementById('editLintang').value;
+      const editBujur = document.getElementById('editBujur').value;
+      const editNo_KK = document.getElementById('editNo_KK').value;
+      const editBerat_Badan = document.getElementById('editBerat_Badan').value;
+      const editTinggi_Badan = document.getElementById('editTinggi_Badan').value;
+      const editLingkar_Kepala = document.getElementById('editLingkar_Kepala').value;
+      const editJml_Saudara_Kandung = document.getElementById('editJml_Saudara_Kandung').value;
+      const editJarak_Rumah_ke_Sekolah = document.getElementById('editJarak_Rumah_ke_Sekolah').value;
+
+
+      try {
+        const response = await fetch(`http://18.138.41.157:3000/updateData/${encodeURIComponent(editNISN)}`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ NISN: editNISN, Nama: editNama, NIPD: editNIPD, JK: editJK, Tempat_Lahir: editTempat_Lahir, Tanggal_Lahir: editTanggal_Lahir, NIK: editNIK, Agama: editAgama, Alamat: editAlamat, RT: editRT, RW: editRW, Dusun: editDusun, Kelurahan: editKelurahan, Kecamatan: editKecamatan, Kode_Pos: editKode_Pos, Jenis_Tinggal: editJenis_Tinggal, Alat_Transportasi: editAlat_Transportasi, HP: editHP, Email: editEmail, SKHUN: editSKHUN, Penerima_KPS: editPenerima_KPS, No_KPS: editNo_KPS, nama_ayah: editnama_ayah, Tahun_Lahir_a: editTahun_Lahir_a, Jenjang_Pendidikan_a: editJenjang_Pendidikan_a, Pekerjaan_a: editPekerjaan_a, Penghasilan_a: editPenghasilan_a, NIK_a: editNIK_a, Nama_i: editNama_i, Tahun_Lahir_i: editTahun_Lahir_i, Jenjang_Pendidikan_i: editJenjang_Pendidikan_i, Pekerjaan_i: editPekerjaan_i, Penghasilan_i: editPenghasilan_i, NIK_i: editNIK_i, Nama_w: editNama_w, Tahun_Lahir_w: editTahun_Lahir_w, Jenjang_Pendidikan_w: editJenjang_Pendidikan_w, Pekerjaan_w: editPekerjaan_w, Penghasilan_w: editPenghasilan_w, NIK_w: editNIK_w, Rombel: editRombel, No_Peserta_Ujian_Nasional: editNo_Peserta_Ujian_Nasional, No_Seri_Ijazah: editNo_Seri_Ijazah, Penerima_KIP: editPenerima_KIP, Nomor_KIP: editNomor_KIP, Nama_di_KIP: editNama_di_KIP, Nomor_KKS: editNomor_KKS, No_Registrasi_Akta_Lahir: editNo_Registrasi_Akta_Lahir, Bank: editBank, Nomor_Rekening_Bank: editNomor_Rekening_Bank, Rekening_Atas_Nama: editRekening_Atas_Nama, Layak_PIP: editLayak_PIP, Alasan_Layak_PIP: editAlasan_Layak_PIP, Kebutuhan_Khusus: editKebutuhan_Khusus, Sekolah_Asal: editSekolah_Asal, Anak_ke_berapa: editAnak_ke_berapa, Lintang: editLintang, Bujur: editBujur, No_KK: editNo_KK, Berat_Badan: editBerat_Badan, Tinggi_Badan: editTinggi_Badan, Lingkar_Kepala: editLingkar_Kepala, Jml_Saudara_Kandung: editJml_Saudara_Kandung, Jarak_Rumah_ke_Sekolah: editJarak_Rumah_ke_Sekolah }), // Add other fields as needed
+        });
+
+        const result = await response.json();
+
+        if (response.ok) {
+          alert(result.message);
+        } else {
+          alert('Error updating data');
+        }
+      } catch (error) {
+        console.error('Error updating data:', error);
+        alert('Internal Server Error');
+      }
+    }
+  </script>
+</body>
+</html>

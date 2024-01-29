@@ -1,0 +1,65 @@
+/* public/styles.css */
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f4f4;
+  margin: 20px;
+  color: #333;
+  text-align: center;
+  font-size: 18px; /* Perbesar ukuran font body */
+}
+
+h1 {
+  color: #007BFF;
+}
+
+#form-container,
+#result {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px; /* Perbesar margin label */
+}
+
+input {
+  padding: 20px; /* Perbesar padding input */
+  margin-bottom: 20px; /* Perbesar margin bottom input */
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 16px; /* Perbesar ukuran font input */
+}
+
+ 
+button {
+  padding: 15px 20px; /* Perbesar padding tombol */
+  font-size: 18px; /* Perbesar ukuran font tombol */
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Penyesuaian untuk Layar Lebar (Misalnya Tablet dan Desktop) */
+@media screen and (min-width: 600px) {
+  #form-container,
+  #result {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  input {
+    width: calc(100% - 24px); /* Penyesuaian agar panjang input seimbang */
+  }
+
+  .back-button {
+    width: auto;
+  }
+}
